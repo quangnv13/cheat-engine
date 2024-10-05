@@ -1,0 +1,41 @@
+﻿  DBKDrvr.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\DBKFunc.h(6,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  (compiling source file 'DBKDrvr.c')
+  
+  DBKFunc.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\DBKFunc.c(3,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  debugger.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\debugger.c(8,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  deepkernel.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\deepkernel.h(1,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  (compiling source file 'deepkernel.c')
+  
+  interruptHook.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\interruptHook.c(3,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  IOPLDispatcher.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\DBKfunc.h(6,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  (compiling source file 'IOPLDispatcher.c')
+  
+  memscan.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\memscan.c(3,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  noexceptions.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\noexceptions.h(7,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  (compiling source file 'noexceptions.c')
+  
+  processlist.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\processlist.c(3,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  threads.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\threads.h(5,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  (compiling source file 'threads.c')
+  
+  ultimap.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\ultimap.c(8,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  ultimap2.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\ultimap2.c(3,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  apic.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\ultimap2\apic.c(1,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  vmxhelper.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\vmxhelper.c(2,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  vmxoffload.c
+C:\Users\quang\Desktop\cheat-engine\DBKKernel\vmxoffload.c(13,10): error C1083: Cannot open include file: 'ntifs.h': No such file or directory
+  Generating Code...

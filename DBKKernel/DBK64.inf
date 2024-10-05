@@ -1,5 +1,5 @@
 ;
-; DBK64.inf
+; QE64.inf
 ;
 
 [Version]
@@ -7,12 +7,12 @@ Signature="$WINDOWS NT$"
 Class=System
 ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider=%ManufacturerName%
-CatalogFile=DBK64.cat
+CatalogFile=QE64.cat
 DriverVer= ; TODO: set DriverVer in stampinf property pages
 
 [DestinationDirs]
 DefaultDestDir = 12
-DBK64_Device_CoInstaller_CopyFiles = 11
+QE64_Device_CoInstaller_CopyFiles = 11
 
 ; ================= Class section =====================
 
@@ -20,7 +20,7 @@ DBK64_Device_CoInstaller_CopyFiles = 11
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-DBK64.sys  = 1,,
+QE64.sys  = 1,,
 WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
 
 ;*****************************************
@@ -31,49 +31,49 @@ WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with
 %ManufacturerName%=Standard,NT$ARCH$
 
 [Standard.NT$ARCH$]
-%DBK64.DeviceDesc%=DBK64_Device, Root\DBK64 ; TODO: edit hw-id
+%QE64.DeviceDesc%=QE64_Device, Root\QE64 ; TODO: edit hw-id
 
-[DBK64_Device.NT]
+[QE64_Device.NT]
 CopyFiles=Drivers_Dir
 
 [Drivers_Dir]
-DBK64.sys
+QE64.sys
 
 ;-------------- Service installation
-[DBK64_Device.NT.Services]
-AddService = DBK64,%SPSVCINST_ASSOCSERVICE%, DBK64_Service_Inst
+[QE64_Device.NT.Services]
+AddService = QE64,%SPSVCINST_ASSOCSERVICE%, QE64_Service_Inst
 
-; -------------- DBK64 driver install sections
-[DBK64_Service_Inst]
-DisplayName    = %DBK64.SVCDESC%
+; -------------- QE64 driver install sections
+[QE64_Service_Inst]
+DisplayName    = %QE64.SVCDESC%
 ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
 StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\DBK64.sys
+ServiceBinary  = %12%\QE64.sys
 
 ;
-;--- DBK64_Device Coinstaller installation ------
+;--- QE64_Device Coinstaller installation ------
 ;
 
-[DBK64_Device.NT.CoInstallers]
-AddReg=DBK64_Device_CoInstaller_AddReg
-CopyFiles=DBK64_Device_CoInstaller_CopyFiles
+[QE64_Device.NT.CoInstallers]
+AddReg=QE64_Device_CoInstaller_AddReg
+CopyFiles=QE64_Device_CoInstaller_CopyFiles
 
-[DBK64_Device_CoInstaller_AddReg]
+[QE64_Device_CoInstaller_AddReg]
 HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
 
-[DBK64_Device_CoInstaller_CopyFiles]
+[QE64_Device_CoInstaller_CopyFiles]
 WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
 
-[DBK64_Device.NT.Wdf]
-KmdfService =  DBK64, DBK64_wdfsect
-[DBK64_wdfsect]
+[QE64_Device.NT.Wdf]
+KmdfService =  QE64, QE64_wdfsect
+[QE64_wdfsect]
 KmdfLibraryVersion = $KMDFVERSION$
 
 [Strings]
 SPSVCINST_ASSOCSERVICE= 0x00000002
-ManufacturerName="Cheat Engine" ;TODO: Replace with your manufacturer name
+ManufacturerName="QE" ;TODO: Replace with your manufacturer name
 ClassName="System" ; TODO: edit ClassName
-DiskName = "DBK64 Installation Disk"
-DBK64.DeviceDesc = "DBK64 Device"
-DBK64.SVCDESC = "DBK64 Service"
+DiskName = "QE64 Installation Disk"
+QE64.DeviceDesc = "QE64 Device"
+QE64.SVCDESC = "QE64 Service"

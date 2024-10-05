@@ -1,5 +1,5 @@
 ;
-; DBK32.inf
+; QE32.inf
 ;
 
 [Version]
@@ -7,12 +7,12 @@ Signature="$WINDOWS NT$"
 Class=System
 ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
 Provider=%ManufacturerName%
-CatalogFile=DBK32.cat
+CatalogFile=QE32.cat
 DriverVer= ; TODO: set DriverVer in stampinf property pages
 
 [DestinationDirs]
 DefaultDestDir = 12
-DBK32_Device_CoInstaller_CopyFiles = 11
+QE32_Device_CoInstaller_CopyFiles = 11
 
 ; ================= Class section =====================
 
@@ -20,7 +20,7 @@ DBK32_Device_CoInstaller_CopyFiles = 11
 1 = %DiskName%,,,""
 
 [SourceDisksFiles]
-DBK32.sys  = 1,,
+QE32.sys  = 1,,
 WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with SourceDisksNames
 
 ;*****************************************
@@ -31,49 +31,49 @@ WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll=1 ; make sure the number matches with
 %ManufacturerName%=Standard,NT$ARCH$
 
 [Standard.NT$ARCH$]
-%DBK32.DeviceDesc%=DBK32_Device, Root\DBK32 ; TODO: edit hw-id
+%QE32.DeviceDesc%=QE32_Device, Root\QE32 ; TODO: edit hw-id
 
-[DBK32_Device.NT]
+[QE32_Device.NT]
 CopyFiles=Drivers_Dir
 
 [Drivers_Dir]
-DBK32.sys
+QE32.sys
 
 ;-------------- Service installation
-[DBK32_Device.NT.Services]
-AddService = DBK32,%SPSVCINST_ASSOCSERVICE%, DBK32_Service_Inst
+[QE32_Device.NT.Services]
+AddService = QE32,%SPSVCINST_ASSOCSERVICE%, QE32_Service_Inst
 
-; -------------- DBK32 driver install sections
-[DBK32_Service_Inst]
-DisplayName    = %DBK32.SVCDESC%
+; -------------- QE32 driver install sections
+[QE32_Service_Inst]
+DisplayName    = %QE32.SVCDESC%
 ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
 StartType      = 3               ; SERVICE_DEMAND_START
 ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
-ServiceBinary  = %12%\DBK32.sys
+ServiceBinary  = %12%\QE32.sys
 
 ;
-;--- DBK32_Device Coinstaller installation ------
+;--- QE32_Device Coinstaller installation ------
 ;
 
-[DBK32_Device.NT.CoInstallers]
-AddReg=DBK32_Device_CoInstaller_AddReg
-CopyFiles=DBK32_Device_CoInstaller_CopyFiles
+[QE32_Device.NT.CoInstallers]
+AddReg=QE32_Device_CoInstaller_AddReg
+CopyFiles=QE32_Device_CoInstaller_CopyFiles
 
-[DBK32_Device_CoInstaller_AddReg]
+[QE32_Device_CoInstaller_AddReg]
 HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
 
-[DBK32_Device_CoInstaller_CopyFiles]
+[QE32_Device_CoInstaller_CopyFiles]
 WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
 
-[DBK32_Device.NT.Wdf]
-KmdfService =  DBK32, DBK32_wdfsect
-[DBK32_wdfsect]
+[QE32_Device.NT.Wdf]
+KmdfService =  QE32, QE32_wdfsect
+[QE32_wdfsect]
 KmdfLibraryVersion = $KMDFVERSION$
 
 [Strings]
 SPSVCINST_ASSOCSERVICE= 0x00000002
-ManufacturerName="Cheat Engine" ;TODO: Replace with your manufacturer name
+ManufacturerName="QE" ;TODO: Replace with your manufacturer name
 ClassName="System" ; TODO: edit ClassName
-DiskName = "DBK32 Installation Disk"
-DBK32.DeviceDesc = "DBK32 Device"
-DBK32.SVCDESC = "DBK32 Service"
+DiskName = "QE32 Installation Disk"
+QE32.DeviceDesc = "QE32 Device"
+QE32.SVCDESC = "QE32 Service"
