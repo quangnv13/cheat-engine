@@ -1,15 +1,11 @@
-<p align="center">
-    <a href="https://github.com/cheat-engine/cheat-engine/raw/master/Cheat%20Engine/images">
-        <img src="https://github.com/cheat-engine/cheat-engine/raw/master/Cheat%20Engine/images/celogo.png" />
-    </a>
-</p>
+<h1 align="center">Q Engine</h1>
 
-<h1 align="center">Cheat Engine</h1>
+Q Engine is a undetected version of cheat engine(latest version) which can bypass most anti-cheat by now
 
-Cheat Engine is a development environment focused on modding games and applications for personal use.
+For DBK driver you need to using EfiGuard to enable test sign in mode in windows first to use your own driver. I'll provide the guide for it but not now cause I'm busing for some other task. During waiting for the guideline you can re-search(google or chatgpt are friends :)))
 
 
-# Download
+<!-- # Download
 
   * **[Latest Version](https://github.com/cheat-engine/cheat-engine/releases/latest)**
 
@@ -57,4 +53,4 @@ Cheat Engine is a development environment focused on modding games and applicati
      vehdebug.lpr: Compile 32- and 64-bit DLL's to add support for the VEH debugger interface
      dbkkernel.sln: for kernelmode functions (settings->extra) You will need to build the no-sig version and either boot with unsigned driver support, or sign the driver yourself    
     
-*.SLN files require visual studio (Usually 2017)
+*.SLN files require visual studio (Usually 2017) -->
