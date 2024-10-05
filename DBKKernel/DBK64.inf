@@ -3,6 +3,7 @@
 ;
 
 [Version]
+PnpLockdown=1
 Signature="$WINDOWS NT$"
 Class=System
 ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}

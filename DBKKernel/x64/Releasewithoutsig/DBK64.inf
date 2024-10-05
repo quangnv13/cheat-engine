@@ -1,0 +1,83 @@
+;
+; QE64.inf
+;
+
+[Version]
+PnpLockdown=1
+Signature="$WINDOWS NT$"
+Class=System
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider=%ManufacturerName%
+CatalogFile=QE64.cat
+DriverVer = 10/05/2024,15.42.8.42
+
+[DestinationDirs]
+DefaultDestDir = 12
+QE64_Device_CoInstaller_CopyFiles = 11
+
+; ================= Class section =====================
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+QE64.sys  = 1,,
+;
+
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NTamd64
+
+[Standard.NTamd64]
+%QE64.DeviceDesc%=QE64_Device, Root\QE64 ; TODO: edit hw-id
+
+[QE64_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+QE64.sys
+
+;-------------- Service installation
+[QE64_Device.NT.Services]
+AddService = QE64,%SPSVCINST_ASSOCSERVICE%, QE64_Service_Inst
+
+; -------------- QE64 driver install sections
+[QE64_Service_Inst]
+DisplayName    = %QE64.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\QE64.sys
+
+;
+;--- QE64_Device Coinstaller installation ------
+;
+
+[QE64_Device.NT.CoInstallers]
+AddReg=QE64_Device_CoInstaller_AddReg
+CopyFiles=QE64_Device_CoInstaller_CopyFiles
+
+[QE64_Device_CoInstaller_AddReg]
+;
+
+
+[QE64_Device_CoInstaller_CopyFiles]
+;
+
+
+[QE64_Device.NT.Wdf]
+KmdfService =  QE64, QE64_wdfsect
+[QE64_wdfsect]
+KmdfLibraryVersion = 1.15
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="QE" ;TODO: Replace with your manufacturer name
+ClassName="System" ; TODO: edit ClassName
+DiskName = "QE64 Installation Disk"
+QE64.DeviceDesc = "QE64 Device"
+QE64.SVCDESC = "QE64 Service"
